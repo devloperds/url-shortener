@@ -32,8 +32,12 @@ Create a .env file in the root directory:
 
 env
 VITE_SUPABASE_URL=your-supabase-url
+
 VITE_SUPABASE_ANON_KEY=your-anon-key
+
 4. Run the development server
+   
 bash
+
 npm run dev
 

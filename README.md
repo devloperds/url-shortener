@@ -36,5 +36,4 @@ VITE_SUPABASE_ANON_KEY=your-anon-key
 4. Run the development server
 bash
 npm run dev
-# or
-yarn dev# url-shortener
+

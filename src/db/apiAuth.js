@@ -2,8 +2,8 @@ import supabase, {supabaseUrl} from "./supabase";
 
 export async function login({email, password}) {
   const {data, error} = await supabase.auth.signInWithPassword({
-    email,
-    password,
+    email: email.trim(),
+    password, 
   });
 
   if (error) throw new Error(error.message);
@@ -21,7 +21,7 @@ export async function signup({name, email, password, profile_pic}) {
   if (storageError) throw new Error(storageError.message);
 
   const {data, error} = await supabase.auth.signUp({
-    email,
+    email: email.trim(),
     password,
     options: {
       data: {

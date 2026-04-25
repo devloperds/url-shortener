@@ -7,23 +7,26 @@ import {deleteUrl} from "@/db/apiUrls";
 import {BeatLoader} from "react-spinners";
 
 const LinkCard = ({url = [], fetchUrls}) => {
-  const downloadImage = () => {
+  const downloadImage = async () => {
     const imageUrl = url?.qr;
-    const fileName = url?.title; // Desired file name for the downloaded image
+    const fileName = url?.title;
 
-    // Create an anchor element
-    const anchor = document.createElement("a");
-    anchor.href = imageUrl;
-    anchor.download = fileName;
+    try {
+      const response = await fetch(imageUrl);
+      const blob = await response.blob();
+      const blobUrl = URL.createObjectURL(blob);
 
-    // Append the anchor to the body
-    document.body.appendChild(anchor);
+      const anchor = document.createElement("a");
+      anchor.href = blobUrl;
+      anchor.download = fileName;
+      document.body.appendChild(anchor);
+      anchor.click();
+      document.body.removeChild(anchor);
 
-    // Trigger the download by simulating a click event
-    anchor.click();
-
-    // Remove the anchor from the document
-    document.body.removeChild(anchor);
+      URL.revokeObjectURL(blobUrl);
+    } catch (error) {
+      console.error("Error downloading image:", error);
+    }
   };
 
   const {loading: loadingDelete, fn: fnDelete} = useFetch(deleteUrl, url.id);
@@ -54,7 +57,7 @@ const LinkCard = ({url = [], fetchUrls}) => {
         <Button
           variant="ghost"
           onClick={() =>
-            navigator.clipboard.writeText(`https://trimrr.in/${url?.short_url}`)
+            navigator.clipboard.writeText(`${window.location.origin}/${url?.short_url}`)
           }
         >
           <Copy />

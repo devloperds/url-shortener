@@ -110,14 +110,14 @@ Run url-shortener using the following command:
 **Using `yarn`** &nbsp; [<img align="center" src="https://img.shields.io/badge/Yarn-2C8EBB.svg?style={badge_style}&logo=yarn&logoColor=white" />](https://yarnpkg.com/)
 
 ```sh
-❯ yarn start
+❯ yarn run dev
 ```
 
 
 **Using `npm`** &nbsp; [<img align="center" src="https://img.shields.io/badge/npm-CB3837.svg?style={badge_style}&logo=npm&logoColor=white" />](https://www.npmjs.com/)
 
 ```sh
-❯ npm start
+❯ npm run dev
 ```
 
 

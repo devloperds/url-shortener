@@ -1,10 +1,5 @@
 <p align="center"><h1 align="center">URL-SHORTENER</h1></p>
-<p align="center">
-	<img src="https://img.shields.io/github/license/devloperds/url-shortener?style=default&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
-	<img src="https://img.shields.io/github/last-commit/devloperds/url-shortener?style=default&logo=git&logoColor=white&color=0080ff" alt="last-commit">
-	<img src="https://img.shields.io/github/languages/top/devloperds/url-shortener?style=default&color=0080ff" alt="repo-top-language">
-	<img src="https://img.shields.io/github/languages/count/devloperds/url-shortener?style=default&color=0080ff" alt="repo-language-count">
-</p>
+
 <p align="center"><!-- default option, no dependency badges. -->
 </p>
 <p align="center">
